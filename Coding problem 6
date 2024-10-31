@@ -1,0 +1,11 @@
+// userProfileObject.js
+
+// Create the userProfile object
+let userProfile = {
+    fullName: "Marion Maximo Hermosa",
+    age: 19, // Replace with the user's actual age
+    favoriteNumber: 12, // Replace with the user's actual favorite number
+    favoriteColors: ["Purple", "Blue", "Black"] // Replace with the user's favorite colors};
+
+// Log the entire userProfile object to the console
+console.log("User Profile:", userProfile);
