@@ -1,0 +1,16 @@
+// colorPreferences.js
+
+// Initialize an empty array to store the user's favorite colors
+let favoriteColors = [];
+
+// Loop to collect three colors from the user
+for (let i = 0; i < 3; i++) {
+    // Prompt the user to enter a color
+    let color = prompt(`Enter color ${i + 1}:`);
+
+    // Add the color to the array using push()
+    favoriteColors.push(color);
+
+    // Print the updated array to the console
+    console.log("Updated list of favorite colors:", favoriteColors);
+}
