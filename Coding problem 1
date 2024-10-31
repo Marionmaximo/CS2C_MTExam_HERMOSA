@@ -1,3 +1,6 @@
+// userProfile.js
+
+// Collect user information
 let fullName = "Marion Maximo Hermosa"; // Full Name
 let age = 19; // Replace with actual age
 let favoriteNumber = 12; // Replace with actual favorite number
