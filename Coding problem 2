@@ -1,0 +1,11 @@
+// classSubjects.js
+
+// Collect user information
+let subjectTitle = "Object-Oriented Programming";
+let classSchedule = "8-9 AM Lec MF CORA, 1:30-3 PM Lab TTh CORA";
+let classroom = "COR A";
+let classInstructor = "K. Rafael";
+let studentName = "Marion Maximo Hermosa";
+
+// Log the user information to the console with the specified format
+console.log(`${studentName} is currently enrolled in ${subjectTitle} with a class schedule of ${classSchedule} at room ${classroom}. The instructor for the subject is ${classInstructor}.`);
