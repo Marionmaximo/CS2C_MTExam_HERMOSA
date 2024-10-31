@@ -1,0 +1,119 @@
+// studentEnrollment.js
+
+// Create arrays for each subject
+let DSA = [];
+let PL = [];
+let Networks = [];
+
+// Function to display enrolled students for a subject
+function displayEnrolledStudents(subject) {
+    console.log("Currently enrolled students in " + subject + ":");
+    switch (subject) {
+        case "DSA":
+            console.log(DSA.length > 0 ? DSA.join(", ") : "No students enrolled.");
+            break;
+        case "PL":
+            console.log(PL.length > 0 ? PL.join(", ") : "No students enrolled.");
+            break;
+        case "Networks":
+            console.log(Networks.length > 0 ? Networks.join(", ") : "No students enrolled.");
+            break;
+    }
+}
+
+// Function to handle enrollment operations
+function enrollmentOperations(subject) {
+    let option;
+    do {
+        option = prompt(`Select an option for ${subject}:\nA) Enroll\nB) Unenroll\nC) Select Another Subject\nD) Exit`);
+        option = option.toUpperCase();
+
+        switch (option) {
+            case "A": // Enroll
+                let studentName = prompt("Enter the name of the student to enroll:");
+                switch (subject) {
+                    case "DSA":
+                        DSA.push(studentName);
+                        break;
+                    case "PL":
+                        PL.push(studentName);
+                        break;
+                    case "Networks":
+                        Networks.push(studentName);
+                        break;
+                }
+                console.log(`${studentName} has been enrolled in ${subject}.`);
+                break;
+
+            case "B": // Unenroll
+                displayEnrolledStudents(subject);
+                studentName = prompt("Enter the name of the student to unenroll:");
+                let index;
+                switch (subject) {
+                    case "DSA":
+                        index = DSA.indexOf(studentName);
+                        if (index !== -1) {
+                            DSA.splice(index, 1); // Remove the student from the array
+                            console.log(`${studentName} has been unenrolled from ${subject}.`);
+                        } else {
+                            console.log(`${studentName} is not enrolled in ${subject}.`);
+                        }
+                        break;
+                    case "PL":
+                        index = PL.indexOf(studentName);
+                        if (index !== -1) {
+                            PL.splice(index, 1);
+                            console.log(`${studentName} has been unenrolled from ${subject}.`);
+                        } else {
+                            console.log(`${studentName} is not enrolled in ${subject}.`);
+                        }
+                        break;
+                    case "Networks":
+                        index = Networks.indexOf(studentName);
+                        if (index !== -1) {
+                            Networks.splice(index, 1);
+                            console.log(`${studentName} has been unenrolled from ${subject}.`);
+                        } else {
+                            console.log(`${studentName} is not enrolled in ${subject}.`);
+                        }
+                        break;
+                }
+                break;
+
+            case "C": // Select Another Subject
+                return; // Exit the current operation loop to select another subject
+            case "D": // Exit
+                console.log("Exiting enrollment. Here are the enrolled students:");
+                console.log("DSA:", DSA);
+                console.log("PL:", PL);
+                console.log("Networks:", Networks);
+                return;
+            default:
+                console.log("Invalid option. Please try again.");
+        }
+    } while (option !== "D");
+}
+
+// Main program loop
+let subjectChoice;
+do {
+    subjectChoice = prompt("Select a subject to enroll a student:\nA) DSA\nB) PL\nC) Networks\nD) Exit");
+    subjectChoice = subjectChoice.toUpperCase();
+
+    switch (subjectChoice) {
+        case "A":
+            enrollmentOperations("DSA");
+            break;
+        case "B":
+            enrollmentOperations("PL");
+            break;
+        case "C":
+            enrollmentOperations("Networks");
+            break;
+        case "D":
+            console.log("Exiting the program.");
+            break;
+        default:
+            console.log("Invalid choice. Please try again.");
+    }
+} while (subjectChoice !== "D");
