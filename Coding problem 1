@@ -1,0 +1,11 @@
+let fullName = "Marion Maximo Hermosa"; // Full Name
+let age = 30; // Replace with actual age
+let favoriteNumber = 12; // Replace with actual favorite number
+let favoriteColor = "Green"; // Replace with actual favorite color
+
+// Log the user information to the console
+console.log("User Information:");
+console.log("Full Name:", fullName);
+console.log("Age:", age);
+console.log("Favorite Number:", favoriteNumber);
+console.log("Favorite Color:", favoriteColor);
